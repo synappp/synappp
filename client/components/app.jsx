@@ -37,7 +37,7 @@ const App = React.createClass({
   },
 
   renderLoading() {
-    return <li><i>Fetching your messages…</i></li>
+    return <li><i>Fetching messages…</i></li>
   },
 
   renderPersonSummary(person) {
@@ -53,12 +53,17 @@ const App = React.createClass({
     return (
       <div>
         <header className="Header">
-          <div>
+          <div className="u-mobile">
             <input placeholder="Search…" type="search" className="SearchBox" />
           </div>
-          {this.state.person && this.state.person.name ? this.renderPersonSummary(this.state.person) : 'Select a person…'}
+          {this.state.person && this.state.person.name ? this.renderPersonSummary(this.state.person) : ''}
         </header>
         <main className="SearchResults">
+          <div className="u-desktop">
+            <div className="Search">
+              <input placeholder="Search…" type="search" className="SearchBox" />
+            </div>
+          </div>
           <ol>
             {messages.length ? this.state.messages.map(this.renderMessageSummary) : this.renderLoading()}
           </ol>

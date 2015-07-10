@@ -1,5 +1,6 @@
 $background: #fff;
 $headerHeight: 15em;
+$headerWidth: 23em;
 
 body {
   background: $background;
@@ -32,16 +33,22 @@ dd {
 }
 
 .Header {
+  @media (max-width: 640px) {
+    width: 100%;
+    height: $headerHeight;
+  }
+  @media (min-width: 640px) {
+    width: $headerWidth;
+    height: 100%;
+  }
   position: fixed;
-  background: #fff;
   z-index: 10;
-  width: 100%;
   top: 0;
   left: 0;
-  height: $headerHeight;
   padding: .5em 1em 0;
   box-sizing: border-box;
   border-bottom: 1px solid hsla(0,0,0%,.03);
+  background: #fbfbfb;
 }
 
 .SearchBox {
@@ -50,7 +57,12 @@ dd {
 }
 
 .SearchResults {
-  margin-top: $headerHeight + 1.5em;
+  @media (max-width: 640px) {
+    margin-top: $headerHeight + 1.5em;
+  }
+  @media (min-width: 640px) {
+    margin-left: $headerWidth + .5em;
+  }
 }
 
 .Avatar {
@@ -62,3 +74,20 @@ dd {
   text-align: center;
 }
 
+.u-desktop {
+  @media (min-width: 800px) {
+    display: block;
+  }
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.u-mobile {
+  @media (min-width: 800px) {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    display: block;
+  }
+}
