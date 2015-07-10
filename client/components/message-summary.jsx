@@ -4,8 +4,8 @@ const MessageSummary = React.createClass({
   renderCC() {
     if (!this.props.cc.length) return null
 
-    const renderCCers = (recipient) => {
-      return <li>{recipient}</li>
+    const renderCCers = (recipient, idx) => {
+      return <li key={idx}>{recipient}</li>
     }
     return (
       <div>

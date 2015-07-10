@@ -1,4 +1,5 @@
 $background: #fff;
+$headerHeight: 15em;
 
 body {
   background: $background;
@@ -29,3 +30,35 @@ dd {
 .MessageSummary {
   margin-bottom: 2em;
 }
+
+.Header {
+  position: fixed;
+  background: #fff;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: $headerHeight;
+  padding: .5em 1em 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid hsla(0,0,0%,.03);
+}
+
+.SearchBox {
+  width: 100%;
+  font-size: 112.5%;
+}
+
+.SearchResults {
+  margin-top: $headerHeight + 1.5em;
+}
+
+.Avatar {
+  height: 5em;
+  width: 5em;
+}
+
+.u-center {
+  text-align: center;
+}
+
