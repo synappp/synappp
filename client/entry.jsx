@@ -1,8 +1,11 @@
-'use strict';
+'use strict'
 
-import 'styles/main.scss';
+import 'styles/main.scss'
 
-import React from 'react/addons';
-import IndexComponent from 'components/Index/IndexComponent.jsx';
+import React from 'react/addons'
 
-React.render(<IndexComponent items={[1,2,3]} />, document.body);
+import App from 'components/app.jsx'
+import MessageActions from 'actions/message-actions.jsx'
+import MessageStore from 'stores/message-store.jsx'
+
+React.render(<App />, document.body)
