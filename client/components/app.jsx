@@ -6,8 +6,6 @@ import MessageSummary from 'components/message-summary.jsx'
 import PersonStore from 'stores/person-store.jsx'
 import PersonSummary from 'components/person-summary.jsx'
 
-var email = 'white_jackson@ziemann.com'
-
 const App = React.createClass({
   mixins: [Reflux.ListenerMixin],
 
@@ -19,14 +17,14 @@ const App = React.createClass({
   getInitialState() {
     return {
       messages: MessageStore.getAll(),
-      selectedPerson: PersonStore.get(email)
+      person: PersonStore.get()
     }
   },
 
   handleStoreChange() {
     this.setState({
       messages: MessageStore.getAll(),
-      selectedPerson: PersonStore.get(email)
+      person: PersonStore.get()
     })
   },
 
@@ -58,7 +56,7 @@ const App = React.createClass({
           <div>
             <input placeholder="Search…" type="search" className="SearchBox" />
           </div>
-          {this.state.selectedPerson ? this.renderPersonSummary(this.state.selectedPerson) : 'Select a person…'}
+          {this.state.person && this.state.person.name ? this.renderPersonSummary(this.state.person) : 'Select a person…'}
         </header>
         <main className="SearchResults">
           <ol>

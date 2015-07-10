@@ -1,6 +1,16 @@
 import React from 'react'
 
 const PersonSummary = React.createClass({
+  renderCompany() {
+    if (!this.props.company) return null
+    return (
+      <div>
+        <dt>Company</dt>
+        <dd>{this.props.company.name}</dd>
+      </div>
+    )
+  },
+
   render() {
     return (
       <div>
@@ -12,8 +22,7 @@ const PersonSummary = React.createClass({
           <dd>{this.props.name}</dd>
           <dt>Email</dt>
           <dd>{this.props.email}</dd>
-          <dt>Company</dt>
-          <dd>{this.props.company.name}</dd>
+          {this.renderCompany()}
         </dl>
       </div>
     )

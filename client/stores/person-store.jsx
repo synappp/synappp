@@ -7,25 +7,16 @@ const PersonStore = Reflux.createStore({
   listenables: [PersonActions],
 
   init() {
-    this.people = PersonActions.loadOne('white_jackson@ziemann.com')
-  },
-
-  getInitialState() {
-    return this.people
+    this.person = null
   },
 
   onLoadOneCompleted(person) {
-    person = person.body
-    this.people[person.email] = person
-    this.trigger(this.people)
+    this.person = person.body
+    this.trigger()
   },
 
-  get(email) {
-    return this.people[email]
-  },
-
-  getAll() {
-    return _.values(this.people)
+  get() {
+    return this.person
   }
 
 })
