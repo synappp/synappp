@@ -1,6 +1,31 @@
-$background: #ffffff;
+$background: #fff;
 
 body {
   background: $background;
-  font-family: "Helvetica Neue", sans-serif;
+  color: #444;
+  font-family: sans-serif;
+  line-height: 1.4;
+  @media (max-width: 480px) {
+    font-size: 87.5%
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+  padding-left: 0.1em;
+}
+
+dt {
+  float: left;
+  color: hsla(0,0,0%,.3);
+}
+
+dd {
+  margin-left: 5em;
+  margin-bottom: 0.5em;
+}
+
+.MessageSummary {
+  margin-bottom: 2em;
 }

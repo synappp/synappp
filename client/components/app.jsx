@@ -26,7 +26,7 @@ const App = React.createClass({
 
   renderMessageSummary(message, idx) {
     return (
-      <li key={idx}>
+      <li className="MessageSummary" key={idx}>
         <MessageSummary {...message} />
       </li>
     )
